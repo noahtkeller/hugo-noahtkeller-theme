@@ -1,0 +1,37 @@
+{
+  "name": "@noahtkeller/hugo-theme",
+  "version": "0.1.0",
+  "description": "Hugo theme for my personal website with data from Github and LinkedIn, and dashboard for custom apps.",
+  "main": "index.js",
+  "scripts": {
+    "build:sass": "webpack --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/noahtkeller/hugo-noahtkeller-theme.git"
+  },
+  "keywords": [
+    "hugo",
+    "theme",
+    "noahtkeller",
+    "github"
+  ],
+  "author": "Noah Keller <noahtkeller@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/noahtkeller/hugo-noahtkeller-theme/issues"
+  },
+  "homepage": "https://github.com/noahtkeller/hugo-noahtkeller-theme#readme",
+  "devDependencies": {
+    "@material/elevation": "^13.0.0",
+    "@material/theme": "^13.0.0",
+    "@noahtkeller/md-theme": "github:noahtkeller/sass-md-theme",
+    "file-loader": "^6.2.0",
+    "mini-css-extract-plugin": "^2.6.0",
+    "node-sass-json-importer": "^4.3.0",
+    "sass": "^1.49.11",
+    "sass-loader": "^12.6.0",
+    "webpack": "^5.71.0",
+    "webpack-cli": "^4.9.2"
+  }
+}

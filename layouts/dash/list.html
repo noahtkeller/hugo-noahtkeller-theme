@@ -1,0 +1,12 @@
+{{ define "og-title" }}
+  {{ .Title }} - {{ .Site.Title }}
+{{ end }}
+{{ define "title" }}
+  {{ .Title }} - {{ .Site.Title }}
+{{ end }}
+{{ define "content" }}
+  <div id="dash-app"></div>
+  <script src="https://unpkg.com/vue@3" defer></script>
+  <script src="dashboard.umd.js" type="module" defer></script>
+  <script defer type="module">window.dashboard.default('#dash-app')</script>
+{{ end }}

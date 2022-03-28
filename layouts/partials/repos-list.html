@@ -1,0 +1,9 @@
+<section class="container list">
+    {{ if eq .Title "Repos" }}
+        {{ template "repo" . }}
+    {{ else if eq .Parent.Title "Repos" }}
+        {{ $path := printf "%s%s" .File.Dir "Home.md" }}
+        {{ $content := readFile $path | markdownify }}
+        {{ template "wikiBase" (dict "context" . "pages" .Paginator.Pages "content" $content "title" .Title "directory" .File.Dir) }}
+    {{ end }}
+</section>
