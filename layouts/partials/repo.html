@@ -1,0 +1,19 @@
+{{define "repo"}}
+<div class="repos-list">
+    {{ range $.Site.Data.repos }}
+        <div class="mdc-card mdc-card--outlined">
+            <a class="link-on-primary repo-title" href="/repos/{{ .name }}"><h3 class="repo-name">{{ .name }}</h3> <span class="material-icons">info</span></a>
+            <div class="description">
+                {{ if ne .description nil }}
+                    {{ .description }}
+                {{else}}
+                    &nbsp;
+                {{end}}
+            </div>
+            <div class="mdc-card__action-icons">
+                GITHUB
+            </div>
+        </div>
+    {{ end }}
+</div>
+{{end}}

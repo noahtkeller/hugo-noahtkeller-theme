@@ -1,0 +1,14 @@
+{{ if eq .Title "Dashboard" }}
+{{ .Content }}
+{{else}}
+<section class="container page">
+    {{ if eq .Section "repos" }}
+        {{ $title := printf "%s %s" .Parent.Title .Title }}
+        {{ template "wikiBase" (dict "context" . "pages" .Parent.Paginator.Pages "content" .Content "title" $title "directory" .File.Dir) }}
+    {{else}}
+        <div>{{ .Title }}</div>
+        <hr/>
+        {{ .Content }}
+    {{end}}
+</section>
+{{end}}

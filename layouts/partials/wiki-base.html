@@ -1,0 +1,22 @@
+{{define "wikiBase"}}
+<article class="wiki-base">
+    <h1 class="title"><a href="/repos">{{ T "repos_link_title" }}</a><span class="material-icons">arrow_right</span>{{ .title }}</h1>
+    <hr/>
+    <div class="wiki-content">
+        <div class="content">{{ .content }}</div>
+        <div class="sidebar">
+            {{ template "wikiNav" (dict "context" .context "pages" .pages "title" .title) }}
+            {{ $fileDir := printf "content/%s" .directory }}
+            {{ range os.ReadDir $fileDir }}
+                {{ if eq .Name "_Sidebar.md" }}
+                    {{ $sidebarPath := printf "%s%s" $fileDir .Name }}
+                    {{ $sidebarContent := readFile $sidebarPath | markdownify }}
+                    <div class="wiki-sidebar">
+                        {{ $sidebarContent }}
+                    </div>
+                {{ end }}
+            {{ end }}
+        </div>
+    </div>
+</article>
+{{end}}

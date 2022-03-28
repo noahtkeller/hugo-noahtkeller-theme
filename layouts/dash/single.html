@@ -1,0 +1,11 @@
+{{ define "og-title" }}
+  {{ .Title }} - {{ .Site.Title }}
+{{ end }}
+{{ define "title" }}
+  {{ .Title }} - {{ .Site.Title }}
+{{ end }}
+{{ define "content" }}
+<script>
+  window.location = window.location.href.replace(/\/dash\//, '/dash/#/').replace(/\/\?/, '?');
+</script>
+{{ end }}

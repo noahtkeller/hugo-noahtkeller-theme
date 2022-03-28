@@ -1,0 +1,37 @@
+name = "noahtkeller"
+license = "MIT"
+licenselink = "https://github.com/noahtkeller/hugo-noahtkeller-theme/blob/master/LICENSE.md"
+description = "Resume with data backed by GitHub & LinkedIn and custom dashboard"
+homepage = "https://github.com/noahtkeller/hugo-noahtkeller-theme"
+tags = [
+  "blog",
+  "minimal",
+  "minimalist",
+  "responsive",
+  "simple",
+  "clean",
+  "personal",
+  "github",
+  "dashboard",
+  "linkedin"
+]
+features = [
+  "analytics",
+  "favicon",
+  "pagination",
+  "single-column",
+  "syntax-highlighting",
+  "github",
+  "linkedin",
+  "dashboard"
+]
+min_version = "0.32"
+
+[author]
+  name = "Noah Keller"
+  homepage = "https://noahtkeller.dev"
+
+[original]
+  name = "Yusuke Ishimi"
+  homepage = "https://naro143.github.io"
+  repo = "https://github.com/naro143/hugo-coder-portfolio"

@@ -1,0 +1,39 @@
+@use "@material/elevation";
+
+.repos-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  row-gap: 2em;
+
+  .mdc-card {
+    min-width: 350px;
+    inline-size: 30vw;
+    min-height: 15vw;
+    @include elevation.elevation(1);
+
+    .description {
+      padding: 1rem;
+      font-family: "Ubuntu Mono";
+      font-size: 1rem;
+    }
+
+    .repo-title {
+      display: flex;
+      flex-direction: row;
+      font-family: "Fira Mono";
+
+      .repo-name {
+        flex: 1;
+        margin: 0.6rem 1rem 0.6rem 1rem;
+        display: inline-block;
+      }
+
+      .material-icons {
+        padding: 0.5rem;
+        vertical-align: top;
+      }
+    }
+  }
+}

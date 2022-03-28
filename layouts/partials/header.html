@@ -1,0 +1,43 @@
+<nav class="navigation">
+  <section class="container">
+      {{ $page := . }}
+      {{ if eq $page.RelPermalink "/" }}
+          <span class="home-link nav-link link-primary inactive-link active">{{ .Site.Title }}</span>
+      {{else}}
+          <a class="nav-link home-link link-primary" href="{{ print "/" | relLangURL }}">{{ .Site.Title }}</a>
+      {{end}}
+
+      <ul class="navigation-list">
+          {{ with .Site.Menus.main}}
+          {{ range sort . }}
+          {{ $url := printf "/%s/" .URL }}
+          <li class="link-primary nav-link {{ if eq $page.RelPermalink $url }}{{ "active" }}{{end}}">{{ if eq $page.RelPermalink $url }}<span class="inactive-link">{{ T .Name }}</span>{{ else }}<a href="{{ .URL | absLangURL }}">{{ T .Name }}</a>{{ end }}</li>
+          {{ end }}
+          {{ end }}
+          {{ if .Site.IsMultiLingual }}
+          {{ $node := . }}
+          {{ .Scratch.Set "separator" true }}
+          {{ with .Site.Params.LangSeparator }}
+          <li class= "{{ if $.Site.Params.itemscentered }} mobile-menu-lang-separator-centered {{ else }} mobile-menu-lang-separator-full {{ end }}">
+              <hr />
+          </li>
+          {{ end }}
+          {{ range .Site.Home.AllTranslations }}
+          {{ if ne $.Site.Language .Language }}
+          {{ if $node.Scratch.Get "separator" }}
+          {{ with .Site.Params.LangSeparator }}
+          <li class="multilingual-separator">
+              <p>{{ . }}</p>
+          </li>
+          {{ end }}
+          {{ $node.Scratch.Set "separator" false }}
+          {{ end }}
+          <li class="navigation-item {{ if $.Site.Params.itemscentered }} align-center {{ else }} {{ if $.Site.Params.rtl }} align-right {{ else }} align-left {{ end }} {{ end }}">
+              <a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
+          </li>
+          {{ end }}
+          {{ end }}
+          {{ end }}
+      </ul>
+  </section>
+</nav>

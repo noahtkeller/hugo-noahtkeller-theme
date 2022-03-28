@@ -1,0 +1,11 @@
+<section class="container list">
+    <div class="title">{{ .Title }}</div>
+    <hr/>
+    <ul>
+        {{ range .Paginator.Pages }}
+        <li>
+            <span>{{ .Date.Format "January 2, 2006" }}</span><a href="{{ .Permalink }}">{{ .Title }}</a>
+        </li>
+        {{ end }}
+    </ul>
+</section>

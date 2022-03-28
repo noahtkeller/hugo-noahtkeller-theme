@@ -1,0 +1,16 @@
+{{ define "wikiNav" }}
+{{ $pageTitle := .title }}
+<div class="wiki-nav">
+    {{ range .pages }}
+        {{ if .Title }}
+            {{ if ne .Title $pageTitle }}
+                {{ if eq .Title "Home" }}
+                <li><a href="{{ .Parent.Permalink }}">{{ .Title }}</a></li>
+                {{else}}
+                <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+                {{ end }}
+            {{ end }}
+        {{ end }}
+    {{ end }}
+</div>
+{{ end }}

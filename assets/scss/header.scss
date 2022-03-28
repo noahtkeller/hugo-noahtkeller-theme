@@ -1,0 +1,41 @@
+.navigation {
+  .container {
+    margin: 0 1rem 0 1rem;
+
+    .nav-link {
+      &.home-link {
+        display: block;
+        padding: 0.5rem 0 0.5rem 0;
+      }
+      font-size: 1.5rem;
+    }
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .navigation-list {
+      margin: 0;
+      list-style: none;
+      padding: 0;
+
+      li {
+        display: inline-block;
+        height: 100%;
+
+        .inactive-link {
+          display: block;
+          padding: 0.5rem 0 0.5rem 0;
+        }
+
+        a {
+          height: 100%;
+          padding: 0.5rem 0 0.5rem 0;
+          display: block;
+        }
+      }
+    }
+  }
+
+}
+
